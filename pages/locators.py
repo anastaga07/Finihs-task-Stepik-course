@@ -1,25 +1,29 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators():
+class LoginPageLocators:
+    LOGIN_FORM = (By.CSS_SELECTOR, '#id_login-username')
+    REGISTER_FORM = (By.CSS_SELECTOR, '#id_registration-email')
+    REGISTER_EMAIL = (By.CSS_SELECTOR, '#id_registration-email')
+    PASSWORD_FORM_1 = (By.CSS_SELECTOR, '#id_registration-password1')
+    PASSWORD_FORM_2 = (By.CSS_SELECTOR, '#id_registration-password2')
+    REGISTER_BUTTON = (By.CSS_SELECTOR, "button[name='registration_submit']")
+
+
+class ProductPageLocators:
+    ADD_TO_BSK_BTN = (By.CSS_SELECTOR, '#add_to_basket_form button')
+    PRICE_ADDED_TO_BSK = (By.CSS_SELECTOR, '#messages div:nth-child(3) .alertinner strong')
+    IS_IN_BASKET = (By.CSS_SELECTOR, '#messages div:nth-child(1) strong')
+    WHAT_TO_ADD_NAME = (By.CSS_SELECTOR, '.product_main h1')
+    WHAT_TO_ADD_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
+
+
+class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    GO_BASKET_PAGE_BTN = (By.CSS_SELECTOR, '.page_inner div:nth-child(2) span a')
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
 
-class LoginPageLocators ():
-    LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
-    REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
 
-class ProductPageLocators():
-    PRODUCT_ADD_BUTTON= (By.CSS_SELECTOR, "button.btn-add-to-basket")   
-    MESSAGE_AFTER_ADD_ITEM = (By.CSS_SELECTOR, '.alert-success:first-child .alertinner strong')
-    TITLE_OF_THE_ITEM = (By.CSS_SELECTOR, 'h1')
-    PRICE_ITEM = (By.CSS_SELECTOR, '.product_main .price_color')
-    BASKET_TOTAL = (By.CSS_SELECTOR, '.alert-info .alertinner strong')
-    SUCCESS_MESSAGE = (By.CSS_SELECTOR, 'div.alertinner')
-
-class BasePageLocators():
-    BASKET_BUTTON = (By.CSS_SELECTOR, ".basket-mini a")
-
-class BasketPageLocators():
-    PRODUCT_IN_BASKET = (By.CSS_SELECTOR, "#content_inner h2")
-    MESSAGE_IN_BASKET = (By.CSS_SELECTOR, '#content_inner')
-
+class BasketPageLocators:
+    ITEMS_TO_BUY_NOW = (By.CSS_SELECTOR, '#content_inner div div h2')
+    EMPTY_BASKET_TEXT = (By.CSS_SELECTOR, '#content_inner p')
