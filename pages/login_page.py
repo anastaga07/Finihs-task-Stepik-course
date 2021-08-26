@@ -19,8 +19,8 @@ class LoginPage(BasePage):
         assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), 'no registration form on the page'
 
     def register_new_user(self):
-        email =  "n@mail.com"
-        password = '123@_abc'
+        email =  str(time.time()) + '@email.org'
+        password = '123456@_abc'
         email_form = self.browser.find_element(*LoginPageLocators.REGISTER_EMAIL)
         password_form_1 = self.browser.find_element(*LoginPageLocators.PASSWORD_FORM_1)
         password_form_2 = self.browser.find_element(*LoginPageLocators.PASSWORD_FORM_2)
