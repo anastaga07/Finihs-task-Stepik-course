@@ -1,4 +1,3 @@
-from pages.main_page import MainPage
 from pages.product_page import ProductPage
 import time
 
@@ -47,10 +46,3 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     page.add_poduct_to_basket()
     time.sleep(1)
     page.should_not_be_success_message()
-
-
-
-
-
-
-
