@@ -1,4 +1,5 @@
 import pytest
+import time
 from pages.login_page import LoginPage
 from pages.product_page import ProductPage
 from pages.basket_page import BasketPage
@@ -21,7 +22,7 @@ class TestUserAddToBasketFromProductPage:
         page.open()
         page.add_to_basket()
         page.check_if_added_to_basket()
-        self.browser.implicitly_wait(5)
+        time.sleep(2)
         page.check_correct_price()
 
     def test_user_cant_see_success_message(self):
